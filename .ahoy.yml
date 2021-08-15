@@ -1,0 +1,48 @@
+ahoyapi: v2
+commands:
+  phpfpm:
+    cmd: docker-compose exec phpfpm "$@"
+
+  root:
+    cmd:  docker-compose exec -u root phpfpm "$@"
+    hide: true
+  app:
+    cmd: docker-compose exec phpfpm "$@"
+    usage: execute command inside phpfpm container
+
+  up:
+    cmd: nohup docker-compose up
+#    cmd: docker-compose up "$@"
+    usage: start docker containers
+
+  down:
+    cmd: docker-compose down
+    usage: stop docker containers
+
+  build:
+    cmd: docker-compose up -d --build > ../docker.log &
+#    cmd: docker-compose up --build
+    usage: build docker containers
+
+  restart:
+    cmd: nohup docker-compose restart "$@"
+    usage: restart docker service [name like phpfpm]
+
+  stop:
+    cmd: docker-compose stop "$@"
+    usage: stop docker service [name like phpfpm]
+
+  start:
+    cmd: nohup docker-compose start "$@"
+    usage: stop docker service [name like phpfpm]
+
+  cme:
+    cmd: ahoy console make:entity
+    usage: create new entity or edit existed
+  cmc:
+    cmd: ahoy console make:controller
+    usage: create new controller
+
+  console:
+    cmd: ahoy phpfpm bin/console "$@"
+    usage: Run symfony console commands in the phpfpm container.
