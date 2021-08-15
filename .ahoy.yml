@@ -12,7 +12,6 @@ commands:
 
   up:
     cmd: nohup docker-compose up
-#    cmd: docker-compose up "$@"
     usage: start docker containers
 
   down:
@@ -21,7 +20,6 @@ commands:
 
   build:
     cmd: docker-compose up -d --build > ../docker.log &
-#    cmd: docker-compose up --build
     usage: build docker containers
 
   restart:
@@ -42,6 +40,12 @@ commands:
   cmc:
     cmd: ahoy console make:controller
     usage: create new controller
+  cmm:
+    cmd: ahoy console make:migration
+    usage: create new migration
+  cdmm:
+    cmd: ahoy console doctrine:migrations:migrate
+    usage: migrate
 
   console:
     cmd: ahoy phpfpm bin/console "$@"

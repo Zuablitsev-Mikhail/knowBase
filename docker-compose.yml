@@ -30,7 +30,7 @@ services:
   db:
     build: ./docker/mysql
     ports:
-      - "3305:3306"
+      - "3306:3306"
     volumes:
       - ./share-files/backup:/tmp/db
       - ./share-files/database:/var/lib/mysql
