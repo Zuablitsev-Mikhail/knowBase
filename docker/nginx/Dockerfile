@@ -23,4 +23,4 @@ RUN adduser -D -g '' -G www-data www-data \
     && chown -R www-data:www-data /var/www/ssl \
     && chown -R www-data:www-data /var/tmp/nginx
 
-EXPOSE 8080
+EXPOSE 443
