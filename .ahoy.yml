@@ -40,9 +40,9 @@ commands:
   cmc:
     cmd: ahoy console make:controller
     usage: create new controller
-    cmcrud:
-      cmd: ahoy console make:crud
-      usage: create new crud
+  cmcrud:
+    cmd: ahoy console make:crud
+    usage: create new crud
   cmm:
     cmd: ahoy console make:migration
     usage: create new migration
